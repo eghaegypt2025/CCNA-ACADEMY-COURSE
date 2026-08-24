@@ -1,0 +1,291 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل في دورة أكاديمية سيسكو للشبكات CCNA</title>
+    <!-- استدعاء خط Cairo و Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- تخصيص الخط والألوان -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        cisco: {
+                            blue: '#049fd9',
+                            dark: '#0d274c',
+                            navy: '#121f3d',
+                            accent: '#00bceb',
+                            light: '#f0f8ff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        /* خلفية شبكية برمجية تعبر عن مجال الشبكات */
+        .bg-network-pattern {
+            background-color: #0d274c;
+            background-image: radial-gradient(#049fd9 1px, transparent 1px), radial-gradient(#00bceb 1px, #0d274c 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            background-opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col justify-between relative bg-network-pattern">
+
+    <!-- شريط العناوين العلوي (Header) -->
+    <header class="w-full bg-cisco-dark/90 backdrop-blur-md border-b border-cisco-blue/30 sticky top-0 z-40 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <!-- شعار مبسط للأكاديمية والشبكات -->
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cisco-blue to-cisco-accent flex items-center justify-center shadow-md">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-white">دورة أكاديمية سيسكو للشبكات CCNA</h1>
+                    <p class="text-xs text-cisco-accent font-medium">Cisco Networking Academy CCNA</p>
+                </div>
+            </div>
+            <span class="bg-cisco-blue/20 text-cisco-accent border border-cisco-blue/40 text-xs px-3 py-1 rounded-full font-semibold">
+                دورة CCNA 200-301
+            </span>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي / نموذج التسجيل -->
+    <main class="max-w-2xl w-full mx-auto px-4 py-8 flex-grow">
+        
+        <!-- بطاقة التعريف بالدورة -->
+        <div class="bg-gradient-to-r from-cisco-navy to-cisco-dark p-6 rounded-2xl border border-cisco-blue/30 shadow-2xl mb-8 relative overflow-hidden">
+            <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-cisco-blue/10 rounded-full blur-2xl"></div>
+            <div class="relative z-10 text-center">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">استمارة التسجيل في دورة أكاديمية سيسكو للشبكات CCNA</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    يرجى تعبئة كافة البيانات بدقة. بعد الانتهاء، سيتم تحويلك لإرسال تفاصيلك وإيصال الدفع عبر الواتساب، ثم الانضمام للجروب المغلق.
+                </p>
+            </div>
+        </div>
+
+        <!-- استمارة التسجيل -->
+        <form id="registrationForm" onsubmit="handleFormSubmit(event)" class="bg-gray-800/90 backdrop-blur-xl p-6 md:p-8 rounded-2xl border border-gray-700 shadow-2xl space-y-6">
+            
+            <!-- حقل الاسم ثلاثي باللغة العربية -->
+            <div>
+                <label for="fullNameAr" class="block text-sm font-semibold text-gray-200 mb-2">
+                    الاسم ثلاثي باللغه العربيه <span class="text-red-400">*</span>
+                </label>
+                <div class="relative">
+                    <input type="text" id="fullNameAr" required placeholder="مثال: أحمد محمد علي" 
+                        class="w-full bg-gray-900/80 border border-gray-600 focus:border-cisco-accent focus:ring-2 focus:ring-cisco-accent/30 text-white rounded-xl px-4 py-3 outline-none transition duration-200">
+                </div>
+            </div>
+
+            <!-- حقل الاسم ثلاثي باللغة الانجليزية -->
+            <div>
+                <label for="fullNameEn" class="block text-sm font-semibold text-gray-200 mb-2">
+                    الاسم ثلاثي باللغه الانجليزيه <span class="text-red-400">*</span>
+                </label>
+                <div class="relative">
+                    <input type="text" id="fullNameEn" required placeholder="Example: Ahmed Mohammad Ali" 
+                        class="w-full bg-gray-900/80 border border-gray-600 focus:border-cisco-accent focus:ring-2 focus:ring-cisco-accent/30 text-white rounded-xl px-4 py-3 outline-none transition duration-200 text-left dir-ltr">
+                </div>
+            </div>
+
+            <!-- حقل التخصص الجامعي -->
+            <div>
+                <label for="specialization" class="block text-sm font-semibold text-gray-200 mb-2">
+                    التخصص الجامعي <span class="text-red-400">*</span>
+                </label>
+                <input type="text" id="specialization" required placeholder="مثال: هندسة حاسوب / تقنية معلومات / آخر" 
+                    class="w-full bg-gray-900/80 border border-gray-600 focus:border-cisco-accent focus:ring-2 focus:ring-cisco-accent/30 text-white rounded-xl px-4 py-3 outline-none transition duration-200">
+            </div>
+
+            <!-- حقل رقم الهاتف والواتساب -->
+            <div>
+                <label for="phoneNumber" class="block text-sm font-semibold text-gray-200 mb-2">
+                    رقم الهاتف (الواتساب) مع رمز الدولة <span class="text-red-400">*</span>
+                </label>
+                <input type="tel" id="phoneNumber" required placeholder="مثال: 201032825648+" 
+                    class="w-full bg-gray-900/80 border border-gray-600 focus:border-cisco-accent focus:ring-2 focus:ring-cisco-accent/30 text-white rounded-xl px-4 py-3 outline-none transition duration-200 text-left dir-ltr">
+                <p class="text-xs text-gray-400 mt-1">سيتم استخدام هذا الرقم لإضافتك لقوائم الحضور والتواصل المباشر.</p>
+            </div>
+
+            <!-- حقل سبب التسجيل -->
+            <div>
+                <label for="registrationReason" class="block text-sm font-semibold text-gray-200 mb-2">
+                    سبب الانضمام للدورة والرغبة في دراستها <span class="text-red-400">*</span>
+                </label>
+                <textarea id="registrationReason" rows="3" required placeholder="اكتب باختصار هدفك من الدورة (مثال: تطوير المهارات، الحصول على شهادة سيسكو، التجهيز لسوق العمل...)" 
+                    class="w-full bg-gray-900/80 border border-gray-600 focus:border-cisco-accent focus:ring-2 focus:ring-cisco-accent/30 text-white rounded-xl px-4 py-3 outline-none transition duration-200 resize-none"></textarea>
+            </div>
+
+            <!-- قسم الدفع الإلكتروني عبر بنك فلسطين -->
+            <div class="bg-gradient-to-br from-gray-900 to-cisco-navy/80 border border-cisco-blue/40 p-5 rounded-2xl space-y-4 shadow-md">
+                <div class="flex items-center gap-3 border-b border-gray-700 pb-3">
+                    <div class="w-9 h-9 rounded-full bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-400 font-bold text-xs">
+                        BOP
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-sm">الدفع الإلكتروني عبر بنك فلسطين (Bank of Palestine)</h3>
+                        <p class="text-xs text-gray-300">يرجى تحويل رسوم الدورة إلى الحساب أدناه ثم إرسال صورة الإيصال عبر الواتساب</p>
+                    </div>
+                </div>
+
+                <!-- تفاصيل الحساب البنكي -->
+                <div class="bg-gray-900/90 p-3.5 rounded-xl border border-gray-700 text-xs text-gray-200 space-y-2.5">
+                    <p class="font-bold text-cisco-accent text-sm mb-1">بيانات الحساب :</p>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 border-b border-gray-800 pb-2">
+                        <span class="text-gray-400 shrink-0">الاسم:</span>
+                        <div class="font-bold text-white text-[11px] sm:text-xs flex flex-col items-start sm:items-end">
+                            <span>عيد عدنان عيد الاغا</span>
+                            <span class="text-cisco-accent font-normal text-[10px] sm:text-[11px] dir-ltr">Eid Adnan Eid Alagha</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400">حساب رقم:</span>
+                        <span class="font-mono text-cisco-accent font-bold dir-ltr">2128149</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
+                        <span class="text-gray-400">رقم الايبان IBAN:</span>
+                        <span class="font-mono text-cisco-accent font-bold dir-ltr break-all text-[11px] sm:text-xs">PS98PALS045421281490993000000</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400">هاتف:</span>
+                        <span class="font-mono text-cisco-accent font-bold dir-ltr">0599669088</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- صندوق التعهد والالتزام -->
+            <div class="bg-cisco-dark/60 border border-cisco-blue/30 p-4 rounded-xl space-y-3">
+                <h3 class="font-bold text-cisco-accent text-sm flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    التعهد والإقرار بالالتزام
+                </h3>
+                <div class="text-xs text-gray-300 space-y-1 leading-relaxed">
+                    <p>• أتعهد بالالتزام بحضور المحاضرات والتطبيقات العملية الخاصة بالدورة.</p>
+                    <p>• أقر بإن كافة البيانات المدخلة صحيحة ودقيقة.</p>
+                    <p>• أقر بإنني قمت بدفع الرسوم المطلوبة وسأقوم بإرفاق صورة إيصال التحويل عبر الواتساب.</p>
+                    <p>• أتعهد بالمحافظة على نظام المجموعة والاحترام المتبادل.</p>
+                </div>
+                
+                <label class="flex items-start gap-3 pt-2 cursor-pointer select-none">
+                    <input type="checkbox" id="pledgeAgreement" required class="mt-1 w-4 h-4 rounded border-gray-600 text-cisco-blue focus:ring-cisco-accent bg-gray-900">
+                    <span class="text-xs font-semibold text-white">أتعهد وألتزم بما ورد أعلاه وأرغب في استكمال التسجيل.</span>
+                </label>
+            </div>
+
+            <!-- زر الإرسال وتحويل الواتساب -->
+            <button type="submit" id="submitBtn" 
+                class="w-full bg-gradient-to-r from-cisco-blue to-cisco-accent hover:opacity-95 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-cisco-blue/30 transition duration-300 flex items-center justify-center space-x-2 space-x-reverse text-base">
+                <span>إرسال البيانات عبر الواتساب والانضمام للجروب</span>
+                <svg class="w-5 h-5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </button>
+        </form>
+    </main>
+
+    <!-- النافذة المنبثقة (Modal) للتأكيد والتوجيه -->
+    <div id="successModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-gray-800 border border-cisco-blue/40 rounded-2xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl relative animate-fade-in">
+            
+            <!-- أيقونة النجاح -->
+            <div class="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">تم تجهيز بياناتك بنجاح!</h3>
+            <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+                شكراً لك <span id="studentNameDisplay" class="font-bold text-cisco-accent"></span>. سيتم فتح الواتساب الآن لإرسال تفاصيلك و **إرفاق صورة إيصال التحويل**، ثم الانتقال لجروب الدورة.
+            </p>
+
+            <!-- زر الانتقال للواتساب وإرسال البيانات -->
+            <a id="whatsappSendBtn" href="#" target="_blank" rel="noopener noreferrer" onclick="if(this.href && this.href !== '#') { window.open(this.href, '_blank'); return false; }"
+                class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2 mb-3">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>خطوة 1: إرسال البيانات وإيصال الدفع عبر الواتساب</span>
+            </a>
+
+            <!-- زر الانتقال لجروب الواتساب المغلق -->
+            <a id="groupJoinBtn" href="https://chat.whatsapp.com/DdF51nm4pn8Hlat11PoYoC?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;"
+                class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2">
+                <span>خطوة 2: الانضمام إلى جروب الدورة المغلق</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة (Footer) -->
+    <footer class="w-full bg-cisco-navy border-t border-gray-800 text-center py-4 text-xs text-gray-400">
+        <p>جميع الحقوق محفوظة © 2026 - دورة أكاديمية سيسكو للشبكات CCNA</p>
+    </footer>
+
+    <!-- الجزء البرمجي (JavaScript) -->
+    <script>
+        // رقم الواتساب الخاص بك المحدث
+        const ADMIN_PHONE = "201032825648";
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            // استخراج القيم من النموذج
+            const fullNameAr = document.getElementById('fullNameAr').value.trim();
+            const fullNameEn = document.getElementById('fullNameEn').value.trim();
+            const specialization = document.getElementById('specialization').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const registrationReason = document.getElementById('registrationReason').value.trim();
+            const pledgeAgreement = document.getElementById('pledgeAgreement').checked;
+
+            if (!fullNameAr || !fullNameEn || !specialization || !phoneNumber || !registrationReason || !pledgeAgreement) {
+                alert('يرجى ملء كافة البيانات والتعهد بالالتزام.');
+                return;
+            }
+
+            // عرض اسم الطالب في النافذة المنبثقة
+            document.getElementById('studentNameDisplay').innerText = fullNameAr;
+
+            // بناء نص الرسالة الجاهزة التي ستذهب لرقمك الشخصي
+            const message = `مرحباً، أرغب بالتسجيل في دورة أكاديمية سيسكو للشبكات CCNA.\n\n` +
+                            `📋 *بيانات الطالب:*\n` +
+                            `🔹 الاسم بالعربي: ${fullNameAr}\n` +
+                            `🔹 الاسم بالإنجليزي: ${fullNameEn}\n` +
+                            `🔹 التخصص الجامعي: ${specialization}\n` +
+                            `🔹 رقم الهاتف (الواتساب): ${phoneNumber}\n` +
+                            `🔹 سبب التسجيل: ${registrationReason}\n\n` +
+                            `⚠️ *(مرفق مع هذه الرسالة صورة إيصال التحويل عبر بنك فلسطين)*`;
+
+            // تشفير النص ليتوافق مع رابط الواتساب الشامل
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${ADMIN_PHONE}&text=${encodedMessage}`;
+
+            // ربط الزر الأول برابط الواتساب الخاص بك مع الرسالة
+            const sendBtn = document.getElementById('whatsappSendBtn');
+            sendBtn.href = whatsappUrl;
+
+            // إظهار النافذة المنبثقة للطالب
+            const modal = document.getElementById('successModal');
+            modal.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
