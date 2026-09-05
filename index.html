@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>التسجيل في دورة أكاديمية سيسكو للشبكات CCNA</title>
-    <!-- استدعاء خط Cairo و Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- تخصيص الخط والألوان -->
     <script>
         tailwind.config = {
             theme: {
@@ -43,15 +41,12 @@
 </head>
 <body class="bg-dark-soft-pattern text-gray-100 min-h-screen flex flex-col justify-between relative">
 
-    <!-- شريط العناوين العلوي (Header) مع الشعار المرفق -->
     <header class="w-full bg-[#151f30]/95 backdrop-blur-md border-b border-cisco-blue/30 sticky top-0 z-40 shadow-lg">
         <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3 space-x-reverse">
-                <!-- صورة شعار أكاديمية سيسكو للشبكات المرفق -->
                 <div class="w-12 h-12 rounded-xl overflow-hidden shadow-lg border border-cisco-accent/30 bg-gradient-to-br from-[#005073] via-[#049fd9] to-[#00bceb] flex items-center justify-center p-1.5 shrink-0">
                     <img src="-8817978772629498931.png" alt="Cisco Networking Academy" class="w-full h-full object-contain rounded-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
                     <svg style="display:none;" viewBox="0 0 100 100" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Cisco Bars -->
                         <rect x="11" y="24" width="4.5" height="12" rx="2.25" fill="white"/>
                         <rect x="22" y="14" width="4.5" height="22" rx="2.25" fill="white"/>
                         <rect x="33" y="20" width="4.5" height="16" rx="2.25" fill="white"/>
@@ -59,9 +54,7 @@
                         <rect x="55" y="20" width="4.5" height="16" rx="2.25" fill="white"/>
                         <rect x="66" y="14" width="4.5" height="22" rx="2.25" fill="white"/>
                         <rect x="77" y="24" width="4.5" height="12" rx="2.25" fill="white"/>
-                        <!-- CISCO Text -->
                         <text x="46" y="47" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-weight="900" font-size="15" letter-spacing="1.5">CISCO</text>
-                        <!-- Networking Academy Text -->
                         <text x="8" y="70" fill="white" font-family="'Cairo', sans-serif" font-weight="400" font-size="14.5">Networking</text>
                         <text x="8" y="87" fill="white" font-family="'Cairo', sans-serif" font-weight="400" font-size="14.5">Academy</text>
                     </svg>
@@ -72,7 +65,6 @@
                 </div>
             </div>
             
-            <!-- شارة الاعتماد المرافقة للشعار -->
             <div class="hidden sm:flex items-center gap-2 bg-cisco-blue/20 text-cisco-accent border border-cisco-blue/40 text-xs px-3.5 py-1.5 rounded-xl font-semibold shadow-inner">
                 <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
                 <span>التسجيل متاح حالياً</span>
@@ -80,10 +72,8 @@
         </div>
     </header>
 
-    <!-- المحتوى الرئيسي / نموذج التسجيل -->
     <main class="max-w-2xl w-full mx-auto px-4 py-8 flex-grow">
         
-        <!-- بطاقة التعريف بالدورة -->
         <div class="bg-[#1c2a40] p-6 rounded-2xl border border-cisco-blue/30 shadow-xl mb-8 relative overflow-hidden text-white">
             <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-cisco-blue/10 rounded-full blur-2xl"></div>
             <div class="relative z-10 text-center">
@@ -94,10 +84,8 @@
             </div>
         </div>
 
-        <!-- استمارة التسجيل -->
         <form id="registrationForm" onsubmit="handleFormSubmit(event)" class="bg-[#1c2a40] p-6 md:p-8 rounded-2xl border border-cisco-blue/20 shadow-2xl space-y-6">
             
-            <!-- بطاقة توضيحية حول نظام الدورة (فوق تعبئة بيانات النموذج) -->
             <div class="bg-[#151f30] border border-cisco-blue/30 p-5 rounded-2xl shadow-lg space-y-3">
                 <div class="flex items-center border-b border-gray-700/80 pb-2">
                     <h3 class="font-bold text-white text-sm md:text-base">استثمر في مستقبلك المهني وانطلق نحو الاحتراف مع أكاديمية سيسكو العالمية</h3>
@@ -113,7 +101,6 @@
                 </div>
             </div>
 
-            <!-- حقل الاسم ثلاثي باللغة العربية -->
             <div>
                 <label for="fullNameAr" class="block text-sm font-semibold text-gray-200 mb-2">
                     الاسم ثلاثي باللغه العربيه <span class="text-red-400">*</span>
@@ -124,7 +111,6 @@
                 </div>
             </div>
 
-            <!-- حقل الاسم ثلاثي باللغة الانجليزية -->
             <div>
                 <label for="fullNameEn" class="block text-sm font-semibold text-gray-200 mb-2">
                     الاسم ثلاثي باللغه الانجليزيه <span class="text-red-400">*</span>
@@ -135,7 +121,16 @@
                 </div>
             </div>
 
-            <!-- حقل التخصص الجامعي -->
+            <div>
+                <label for="email" class="block text-sm font-semibold text-gray-200 mb-2">
+                    البريد الإلكتروني <span class="text-red-400">*</span>
+                </label>
+                <div class="relative">
+                    <input type="email" id="email" required placeholder="example@gmail.com" 
+                        class="w-full bg-[#151f30] border border-gray-600 focus:border-cisco-accent focus:ring-2 focus:ring-cisco-accent/30 text-white rounded-xl px-4 py-3 outline-none transition duration-200 text-left dir-ltr">
+                </div>
+            </div>
+
             <div>
                 <label for="specialization" class="block text-sm font-semibold text-gray-200 mb-2">
                     التخصص الجامعي <span class="text-red-400">*</span>
@@ -144,7 +139,6 @@
                     class="w-full bg-[#151f30] border border-gray-600 focus:border-cisco-accent focus:ring-2 focus:ring-cisco-accent/30 text-white rounded-xl px-4 py-3 outline-none transition duration-200">
             </div>
 
-            <!-- حقل رقم الهاتف والواتساب -->
             <div>
                 <label for="phoneNumber" class="block text-sm font-semibold text-gray-200 mb-2">
                     رقم الهاتف (الواتساب) مع رمز الدولة <span class="text-red-400">*</span>
@@ -154,7 +148,6 @@
                 <p class="text-xs text-gray-400 mt-1">سيتم استخدام هذا الرقم لإضافتك لقوائم الحضور والتواصل المباشر.</p>
             </div>
 
-            <!-- حقل سبب التسجيل -->
             <div>
                 <label for="registrationReason" class="block text-sm font-semibold text-gray-200 mb-2">
                     سبب الانضمام للدورة والرغبة في دراستها <span class="text-red-400">*</span>
@@ -163,7 +156,6 @@
                     class="w-full bg-[#151f30] border border-gray-600 focus:border-cisco-accent focus:ring-2 focus:ring-cisco-accent/30 text-white rounded-xl px-4 py-3 outline-none transition duration-200 resize-none"></textarea>
             </div>
 
-            <!-- قسم الدفع الإلكتروني عبر بنك فلسطين -->
             <div class="bg-[#151f30] border border-cisco-blue/30 p-5 rounded-2xl space-y-4 shadow-md">
                 <div class="flex items-center gap-3 border-b border-gray-700 pb-3">
                     <div class="w-9 h-9 rounded-full bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-400 font-bold text-xs">
@@ -175,7 +167,6 @@
                     </div>
                 </div>
 
-                <!-- إبراز رسوم الدورة بشكل واضح ومحدد -->
                 <div class="bg-gradient-to-r from-cisco-blue/20 via-cisco-accent/15 to-cisco-blue/20 border border-cisco-accent/40 rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 shadow-inner">
                     <div class="flex items-center gap-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-cisco-accent animate-pulse"></span>
@@ -188,16 +179,8 @@
                     </div>
                 </div>
 
-                <!-- تفاصيل الحساب البنكي -->
                 <div class="bg-[#1c2a40] p-3.5 rounded-xl border border-gray-700 text-xs text-gray-200 space-y-2.5">
                     <p class="font-bold text-cisco-accent text-sm mb-1">بيانات الحساب :</p>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 border-b border-gray-800 pb-2">
-                        <span class="text-gray-400 shrink-0">الاسم:</span>
-                        <div class="font-bold text-white text-[11px] sm:text-xs flex flex-col items-start sm:items-end">
-                            <span>عيد عدنان عيد الاغا</span>
-                            <span class="text-cisco-accent font-normal text-[10px] sm:text-[11px] dir-ltr">Eid Adnan Eid Alagha</span>
-                        </div>
-                    </div>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-400">حساب رقم:</span>
                         <span class="font-mono text-cisco-accent font-bold dir-ltr">2128149</span>
@@ -208,7 +191,6 @@
                     </div>
                 </div>
 
-                <!-- رمز الاستجابة السريعة QR للدفع الفوري (الدولار والشيكل) -->
                 <div class="space-y-3 pt-2">
                     <p class="font-bold text-cisco-accent text-xs flex items-center gap-1.5">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -217,7 +199,6 @@
                         <span>أو مسح رمز الاستجابة السريعة (QR) للدفع المباشر:</span>
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <!-- كود الدولار -->
                         <div class="bg-[#1c2a40] border border-cisco-blue/30 rounded-xl p-3 flex flex-col items-center text-center space-y-2.5">
                             <div class="flex items-center gap-1.5 text-xs font-bold text-white">
                                 <span class="w-2 h-2 rounded-full bg-green-400"></span>
@@ -225,7 +206,6 @@
                             </div>
                             <div class="bg-white p-2 rounded-lg shadow-md max-w-[160px] w-full flex items-center justify-center">
                                 <img src="1000544562.jpg" alt="رمز QR للدفع - حساب الدولار" class="w-full h-auto object-contain rounded-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-                                <!-- بديل متجهي يظهر مباشرة في المعاينة في حال تعذر تحميل الصورة المحلية -->
                                 <svg style="display:none;" viewBox="0 0 200 260" class="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
                                         <linearGradient id="qGrad1" x1="0" y1="0" x2="0" y2="1">
@@ -234,14 +214,12 @@
                                         </linearGradient>
                                     </defs>
                                     <rect x="2" y="2" width="196" height="204" rx="14" fill="#ffffff" stroke="#c0267d" stroke-width="3"/>
-                                    <!-- أنماط زوايا الـ QR -->
                                     <rect x="16" y="16" width="36" height="36" rx="6" fill="none" stroke="#c0267d" stroke-width="4.5"/>
                                     <rect x="23" y="23" width="22" height="22" rx="3" fill="#c0267d"/>
                                     <rect x="148" y="16" width="36" height="36" rx="6" fill="none" stroke="#c0267d" stroke-width="4.5"/>
                                     <rect x="155" y="23" width="22" height="22" rx="3" fill="#c0267d"/>
                                     <rect x="16" y="152" width="36" height="36" rx="6" fill="none" stroke="#c0267d" stroke-width="4.5"/>
                                     <rect x="23" y="159" width="22" height="22" rx="3" fill="#c0267d"/>
-                                    <!-- مصفوفة الباركود التفاعلية -->
                                     <g fill="#c0267d">
                                         <rect x="62" y="18" width="8" height="8" rx="1"/><rect x="76" y="18" width="14" height="8" rx="1"/><rect x="96" y="18" width="8" height="8" rx="1"/><rect x="110" y="18" width="12" height="8" rx="1"/><rect x="128" y="18" width="8" height="8" rx="1"/>
                                         <rect x="62" y="32" width="14" height="8" rx="1"/><rect x="82" y="32" width="8" height="8" rx="1"/><rect x="104" y="32" width="14" height="8" rx="1"/><rect x="124" y="32" width="12" height="8" rx="1"/>
@@ -257,13 +235,11 @@
                                         <rect x="62" y="172" width="12" height="8" rx="1"/><rect x="80" y="172" width="14" height="8" rx="1"/><rect x="100" y="172" width="8" height="8" rx="1"/><rect x="114" y="172" width="14" height="8" rx="1"/><rect x="134" y="172" width="12" height="8" rx="1"/><rect x="152" y="172" width="14" height="8" rx="1"/><rect x="172" y="172" width="12" height="8" rx="1"/>
                                         <rect x="62" y="186" width="14" height="8" rx="1"/><rect x="82" y="186" width="8" height="8" rx="1"/><rect x="96" y="186" width="14" height="8" rx="1"/><rect x="116" y="186" width="12" height="8" rx="1"/><rect x="134" y="186" width="8" height="8" rx="1"/><rect x="148" y="186" width="14" height="8" rx="1"/><rect x="168" y="186" width="16" height="8" rx="1"/>
                                     </g>
-                                    <!-- الشعار في المنتصف -->
                                     <rect x="76" y="76" width="48" height="48" rx="10" fill="#ffffff" stroke="#f1f5f9" stroke-width="2"/>
                                     <path d="M86 98 C86 91 93 84 100 84 C107 84 114 91 114 98 C114 105 107 112 100 112 Z" fill="#fbcfe8" opacity="0.4"/>
                                     <path d="M92 92 L106 92 L102 87 L92 92 Z" fill="#c0267d"/>
                                     <path d="M108 108 L94 108 L98 113 L108 108 Z" fill="#9d174d"/>
                                     <text x="100" y="103" fill="#c0267d" font-size="11" font-weight="900" text-anchor="middle" font-family="Arial, sans-serif">BOP</text>
-                                    <!-- مؤشر ولافتة QUICK السفلية -->
                                     <polygon points="90,206 110,206 100,217" fill="#c0267d"/>
                                     <rect x="2" y="216" width="196" height="42" rx="9" fill="url(#qGrad1)"/>
                                     <text x="100" y="245" fill="#ffffff" font-size="22" font-weight="900" letter-spacing="1.5" text-anchor="middle" font-family="'Cairo', Arial, sans-serif">QUICK</text>
@@ -272,7 +248,6 @@
                             <span class="text-[11px] text-gray-300">مسح الكود للدفع الفوري لحساب الدولار</span>
                         </div>
 
-                        <!-- كود الشيكل -->
                         <div class="bg-[#1c2a40] border border-cisco-blue/30 rounded-xl p-3 flex flex-col items-center text-center space-y-2.5">
                             <div class="flex items-center gap-1.5 text-xs font-bold text-white">
                                 <span class="w-2 h-2 rounded-full bg-cisco-accent"></span>
@@ -280,7 +255,6 @@
                             </div>
                             <div class="bg-white p-2 rounded-lg shadow-md max-w-[160px] w-full flex items-center justify-center">
                                 <img src="1000544563.jpg" alt="رمز QR للدفع - حساب الشيكل" class="w-full h-auto object-contain rounded-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-                                <!-- بديل متجهي يظهر مباشرة في المعاينة في حال تعذر تحميل الصورة المحلية -->
                                 <svg style="display:none;" viewBox="0 0 200 260" class="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
                                         <linearGradient id="qGrad2" x1="0" y1="0" x2="0" y2="1">
@@ -289,14 +263,12 @@
                                         </linearGradient>
                                     </defs>
                                     <rect x="2" y="2" width="196" height="204" rx="14" fill="#ffffff" stroke="#c0267d" stroke-width="3"/>
-                                    <!-- أنماط زوايا الـ QR -->
                                     <rect x="16" y="16" width="36" height="36" rx="6" fill="none" stroke="#c0267d" stroke-width="4.5"/>
                                     <rect x="23" y="23" width="22" height="22" rx="3" fill="#c0267d"/>
                                     <rect x="148" y="16" width="36" height="36" rx="6" fill="none" stroke="#c0267d" stroke-width="4.5"/>
                                     <rect x="155" y="23" width="22" height="22" rx="3" fill="#c0267d"/>
                                     <rect x="16" y="152" width="36" height="36" rx="6" fill="none" stroke="#c0267d" stroke-width="4.5"/>
                                     <rect x="23" y="159" width="22" height="22" rx="3" fill="#c0267d"/>
-                                    <!-- مصفوفة الباركود التفاعلية -->
                                     <g fill="#c0267d">
                                         <rect x="62" y="18" width="12" height="8" rx="1"/><rect x="80" y="18" width="10" height="8" rx="1"/><rect x="96" y="18" width="14" height="8" rx="1"/><rect x="116" y="18" width="10" height="8" rx="1"/><rect x="132" y="18" width="8" height="8" rx="1"/>
                                         <rect x="62" y="32" width="8" height="8" rx="1"/><rect x="76" y="32" width="14" height="8" rx="1"/><rect x="96" y="32" width="10" height="8" rx="1"/><rect x="112" y="32" width="14" height="8" rx="1"/><rect x="130" y="32" width="10" height="8" rx="1"/>
@@ -312,13 +284,11 @@
                                         <rect x="62" y="172" width="8" height="8" rx="1"/><rect x="76" y="172" width="14" height="8" rx="1"/><rect x="96" y="172" width="8" height="8" rx="1"/><rect x="110" y="172" width="14" height="8" rx="1"/><rect x="130" y="172" width="12" height="8" rx="1"/><rect x="148" y="172" width="8" height="8" rx="1"/><rect x="162" y="172" width="14" height="8" rx="1"/><rect x="182" y="172" width="4" height="8" rx="1"/>
                                         <rect x="62" y="186" width="12" height="8" rx="1"/><rect x="80" y="186" width="10" height="8" rx="1"/><rect x="96" y="186" width="14" height="8" rx="1"/><rect x="116" y="186" width="8" height="8" rx="1"/><rect x="130" y="186" width="14" height="8" rx="1"/><rect x="150" y="186" width="12" height="8" rx="1"/><rect x="168" y="186" width="16" height="8" rx="1"/>
                                     </g>
-                                    <!-- الشعار في المنتصف -->
                                     <rect x="76" y="76" width="48" height="48" rx="10" fill="#ffffff" stroke="#f1f5f9" stroke-width="2"/>
                                     <path d="M86 98 C86 91 93 84 100 84 C107 84 114 91 114 98 C114 105 107 112 100 112 Z" fill="#fbcfe8" opacity="0.4"/>
                                     <path d="M92 92 L106 92 L102 87 L92 92 Z" fill="#c0267d"/>
                                     <path d="M108 108 L94 108 L98 113 L108 108 Z" fill="#9d174d"/>
                                     <text x="100" y="103" fill="#c0267d" font-size="11" font-weight="900" text-anchor="middle" font-family="Arial, sans-serif">BOP</text>
-                                    <!-- مؤشر ولافتة QUICK السفلية -->
                                     <polygon points="90,206 110,206 100,217" fill="#c0267d"/>
                                     <rect x="2" y="216" width="196" height="42" rx="9" fill="url(#qGrad2)"/>
                                     <text x="100" y="245" fill="#ffffff" font-size="22" font-weight="900" letter-spacing="1.5" text-anchor="middle" font-family="'Cairo', Arial, sans-serif">QUICK</text>
@@ -330,7 +300,6 @@
                 </div>
             </div>
 
-            <!-- صندوق التعهد والالتزام المقلص والمخصص للدراسة الذاتية -->
             <div class="bg-[#151f30] border border-cisco-blue/30 p-4 rounded-xl space-y-3">
                 <h3 class="font-bold text-cisco-accent text-sm flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -349,12 +318,10 @@
                 </label>
             </div>
 
-            <!-- رسالة تنبيه عند وجود حقول ناقصة -->
             <div id="errorAlert" class="hidden bg-red-900/50 border border-red-500/50 text-red-200 text-xs p-3 rounded-xl">
                 يرجى ملء كافة البيانات والتعهد بالالتزام قبل المتابعة.
             </div>
 
-            <!-- زر الإرسال وتحويل الواتساب المباشر -->
             <button type="submit" id="submitBtn" 
                 class="w-full bg-gradient-to-r from-cisco-blue to-cisco-accent hover:opacity-95 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-cisco-blue/30 transition duration-300 flex items-center justify-center space-x-2 space-x-reverse text-base">
                 <span>إرسال البيانات عبر الواتساب والانضمام للجروب</span>
@@ -365,12 +332,10 @@
         </form>
     </main>
 
-    <!-- تذييل الصفحة (Footer) -->
     <footer class="w-full bg-[#151f30] border-t border-gray-800 text-center py-4 text-xs text-gray-400">
         <p>جميع الحقوق محفوظة © 2026 - دورة أكاديمية سيسكو للشبكات CCNA</p>
     </footer>
 
-    <!-- الجزء البرمجي (JavaScript) -->
     <script>
         // رقم الواتساب الخاص بالمدرب
         const ADMIN_PHONE = "201032825648";
@@ -383,24 +348,26 @@
             // استخراج القيم من النموذج
             const fullNameAr = document.getElementById('fullNameAr').value.trim();
             const fullNameEn = document.getElementById('fullNameEn').value.trim();
+            const email = document.getElementById('email').value.trim();
             const specialization = document.getElementById('specialization').value.trim();
             const phoneNumber = document.getElementById('phoneNumber').value.trim();
             const registrationReason = document.getElementById('registrationReason').value.trim();
             const pledgeAgreement = document.getElementById('pledgeAgreement').checked;
             const errorAlert = document.getElementById('errorAlert');
 
-            if (!fullNameAr || !fullNameEn || !specialization || !phoneNumber || !registrationReason || !pledgeAgreement) {
+            if (!fullNameAr || !fullNameEn || !email || !specialization || !phoneNumber || !registrationReason || !pledgeAgreement) {
                 errorAlert.classList.remove('hidden');
                 return;
             } else {
                 errorAlert.classList.add('hidden');
             }
 
-            // بناء نص الرسالة الجاهزة التي ستذهب للمدرب متضمنة رابط الجروب
+            // بناء نص الرسالة الجاهزة التي ستذهب للمدرب متضمنة البريد الإلكتروني ورابط الجروب
             const message = `مرحباً أستاذ عيد، أرغب بالتسجيل في دورة أكاديمية سيسكو للشبكات CCNA.\n\n` +
                             `📋 *بيانات الطالب المسجل:*\n` +
                             `🔹 الاسم بالعربي: ${fullNameAr}\n` +
                             `🔹 الاسم بالإنجليزي: ${fullNameEn}\n` +
+                            `🔹 البريد الإلكتروني: ${email}\n` +
                             `🔹 التخصص الجامعي: ${specialization}\n` +
                             `🔹 رقم الهاتف (الواتساب): ${phoneNumber}\n` +
                             `🔹 سبب التسجيل: ${registrationReason}\n\n` +
